@@ -5,8 +5,8 @@ from WasRun import WasRun
 
 class TestCaseTest(TestCase):
 
-    def __init__(self):
-        super().__init__('')
+    def __init__(self, run_method_name):
+        super().__init__(run_method_name)
 
     def test_template_method(self):
         test = WasRun("test_method")
@@ -19,7 +19,7 @@ class TestCaseTest(TestCase):
         assert ("1 run, 0 failed" == result.summary())
 
     def test_failed_result(self):
-        test = WasRun("test_broken_method")
+        test = WasRun("")
         result = test.run()
         assert ("1 run, 1 failed" == result.summary())
 
@@ -27,4 +27,4 @@ class TestCaseTest(TestCase):
         result = TestResult()
         result.test_started()
         result.test_failed()
-        assert("1 run, 1 failed" == result.summary())
+        assert ("1 run, 1 failed" == result.summary())

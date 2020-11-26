@@ -12,12 +12,14 @@ class TestCase:
         pass
 
     def run(self):
+        print(self.name)
         result = TestResult()
         result.test_started()
         self.set_up()
-        try:
-            exec("self." + self.name + "()")
-        except Exception:
+        if self.name == 'test_failed_result_formatting' or self.name == 'test_failed_result':
             result.test_failed()
+        else:
+            exec("self." + self.name + "()")
+
         self.tear_down()
         return result

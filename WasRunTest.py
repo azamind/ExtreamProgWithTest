@@ -1,14 +1,13 @@
-from pprint import pprint
-
 from TestCaseTest import TestCaseTest
-from WasRun import WasRun
+from TestResult import TestResult
+from TestSuite import TestSuite
 
-test = WasRun("test_method")
-pprint(test.log)
-test.run()
-pprint(test.log)
+suite = TestSuite()
+suite.add(TestCaseTest("test_template_method"))
+suite.add(TestCaseTest("test_result"))
+suite.add(TestCaseTest("test_failed_result"))
+suite.add(TestCaseTest("test_failed_result_formatting"))
 
-pprint(TestCaseTest("test_result").run().summary())
-pprint(TestCaseTest("test_template_method").run().summary())
-pprint(TestCaseTest("test_failed_result").run().summary())
-pprint(TestCaseTest("test_failed_result_formatting").run().summary())
+result = TestResult()
+suite.run(result)
+print(result.summary())

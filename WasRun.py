@@ -16,6 +16,3 @@ class WasRun(TestCase):
 
     def tear_down(self):
         self.log = self.log + "tear_down "
-
-    # def test_broken_method(self):
-    #     return False

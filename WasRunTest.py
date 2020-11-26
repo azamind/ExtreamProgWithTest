@@ -8,5 +8,8 @@ pprint(test.log)
 test.run()
 pprint(test.log)
 
-test2 = TestCaseTest("test_method")
-pprint(test2.test_template_method())
+test_case_test = TestCaseTest()
+pprint(test_case_test.test_template_method())
+pprint(test_case_test.test_result())
+
+# pprint(test_case_test.test_failed_result())

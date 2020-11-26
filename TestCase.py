@@ -15,6 +15,9 @@ class TestCase:
         result = TestResult()
         result.test_started()
         self.set_up()
-        exec("self." + self.name + "()")
+        try:
+            exec("self." + self.name + "()")
+        except Exception:
+            result.test_failed()
         self.tear_down()
         return result

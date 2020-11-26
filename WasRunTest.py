@@ -11,5 +11,4 @@ pprint(test.log)
 test_case_test = TestCaseTest()
 pprint(test_case_test.test_template_method())
 pprint(test_case_test.test_result())
-
-# pprint(test_case_test.test_failed_result())
+pprint(test_case_test.test_failed_result())
